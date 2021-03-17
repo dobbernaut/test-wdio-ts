@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "outDir": "../out-tsc/e2e",
+    "module": "commonjs",
+    "target": "es2018",
+    "types": [
+      "node",
+      "@wdio/sync",
+      "@wdio/jasmine-framework"
+    ]
+  }
+}
