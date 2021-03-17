@@ -7,5 +7,5 @@
     "spec-reporter.ts"
   ],
   "stopSpecOnExpectationFailure": false,
-  "random": true
+  "random": false
 }
