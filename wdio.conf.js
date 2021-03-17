@@ -43,8 +43,7 @@ exports.config = {
       }
     }]
   ],
-  jasmineNodeOpts: {
-    defaultTimeoutInterval: 60000,
-    require: ['ts-node/register']
+  jasmineOpts: {
+    defaultTimeoutInterval: 60000
   }
 }
