@@ -1,7 +1,7 @@
 
-These are tests for the Trade Me's site and services.
+These are tests for the Trade Me's website and services.
 
-The tests are divided into two. A UI test suite that tests the Trade Me website, and an API test suite which test Trade Me's services.
+The tests are divided into two. A UI test suite that tests the [Trade Me website](https://www.tmsandbox.co.nz/), and an API test suite which test [Trade Me's services](https://developer.trademe.co.nz/api-overview/).
 
 The tests runs on node and is written on Typescript. It uses [axios](https://axios-http.com/) as the http client for testing the services and [webdriverio](https://webdriver.io/) for the website. Both are using [Jasmine](https://jasmine.github.io/) for the test framework.
 
@@ -41,7 +41,6 @@ key=REPLACEWITHconsumerkey
 keysecret=REPLACEWITHconsumersecret
 ```
 ## Run test
-**To run the test**
 
 For running the ui tests, use:
 ```bash
