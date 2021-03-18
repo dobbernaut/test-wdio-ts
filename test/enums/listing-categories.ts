@@ -1,0 +1,23 @@
+export enum Categories {
+  antiques = 'Antiques & collectables',
+  babyGear = 'Baby gear',
+  books = 'Books',
+  buildingRenovation = 'Building & renovation',
+  businessFarmingIndustry = 'Business, farming & industry',
+  clothingFashion = 'Clothing & fashion',
+  computers = 'Computers',
+  electronicsPhotography = 'Electronics & photography',
+  gaming = 'Gaming',
+  healthBeauty = 'Health & beauty',
+  homeLiving = 'Home & living',
+  jewelleryWatches = 'Jewellery & watches',
+  mobilePhones = 'Mobile phones',
+  musicInstruments = 'Music & instruments',
+  petsAnimals = 'Pets & animals',
+  sports = 'Sports',
+  toysModels = 'Toys & models',
+  lastChance = 'Last chance',
+  services = 'Services',
+  stores = 'Stores',
+  allCategories = 'View all categories '
+}
