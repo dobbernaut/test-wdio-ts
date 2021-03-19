@@ -5,6 +5,8 @@ The tests are divided into two. A UI test suite that tests the [Trade Me website
 
 The tests runs on node and is written on Typescript. It uses [axios](https://axios-http.com/) as the http client for testing the services and [webdriverio](https://webdriver.io/) for the website. Both are using [Jasmine](https://jasmine.github.io/) for the test framework.
 
+An Azure pipeline is setup to run these tests. It can be accessed from [here](https://dev.azure.com/noelsev/bahaykubo/_build?definitionId=4).
+
 ## Prerequisites
 
 You will need to have [Node](https://nodejs.org/en/) installed (used v12.13.0) and able to run npm (used v6.12.0) commands. Run the commands shown here from bash or shell.
