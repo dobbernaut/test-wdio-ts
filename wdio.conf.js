@@ -39,7 +39,7 @@ exports.config = {
     ['junit', {
       outputDir: './junit',
       outputFileFormat: function(options) {
-        return 'test-results.xml'
+        return 'ui-test-results.xml'
       }
     }]
   ],
