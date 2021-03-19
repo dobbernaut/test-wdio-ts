@@ -18,7 +18,7 @@ jasmine.getEnv().addReporter(new SpecReporter({
   customProcessors: [CustomProcessor]
 }));
 jasmine.getEnv().addReporter(new JUnitXmlReporter({
-    savePath: './junit',
-    filePrefix: 'api-test-results',
-    consolidateAll: true
+  savePath: './junit',
+  filePrefix: 'api-test-results',
+  consolidateAll: true
 }));
