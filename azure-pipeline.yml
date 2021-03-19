@@ -1,0 +1,35 @@
+variables:
+- name: passwords
+  value: testpassword=$(TESTPASSWORD) token=$(TOKEN) tokensecret=$(TOKENSECRET) key=$(KEY) keysecret=$(KEYSECRET)
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: npm ci
+  displayName: 'Install npm packages'
+
+- script: npm run lint
+  displayName: 'Lint project'
+  condition: succeededOrFailed()
+
+- script: ${{ variables.passwords }} npm run test
+  displayName: 'Run API tests'
+  condition: succeededOrFailed()
+
+- script: ${{ variables.passwords }} npm run test
+  displayName: 'Run UI tests'
+  condition: succeededOrFailed()
+
+- task: PublishTestResults@2
+  displayName: 'Publish test results'
+  inputs:
+    searchFolder: $(System.DefaultWorkingDirectory)/junit
+    testRunTitle: 'Test'
+    testResultsFormat: JUnit
+    testResultsFiles: "*.xml"
+    mergeTestResults: true
+  condition: succeededOrFailed()
