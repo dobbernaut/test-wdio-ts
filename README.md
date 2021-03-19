@@ -1,5 +1,5 @@
 
-These are tests for the Trade Me's website and services.
+These are tests for Trade Me's website and services.
 
 The tests are divided into two. A UI test suite that tests the [Trade Me website](https://www.tmsandbox.co.nz/), and an API test suite which test [Trade Me's services](https://developer.trademe.co.nz/api-overview/).
 
