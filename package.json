@@ -2,11 +2,10 @@
   "name": "test-trademe",
   "version": "1.0.0",
   "description": "trademe",
-  "main": "index.js",
   "scripts": {
     "lint": "eslint ./test",
     "ui-test": "wdio run ./wdio.conf.js",
-    "api-test": "jasmine-ts --config=jasmine.json --reporter=jasmine-spec-reporter"
+    "api-test": "jasmine-ts --config=./jasmine.json"
   },
   "author": "noel sevilla",
   "license": "ISC",
