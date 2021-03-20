@@ -1,0 +1,40 @@
+name: TradeMe Test
+
+env:
+  PASSWORDS: testpassword=${{ secrets.TESTPASSWORD }} token=${{ secrets.TOKEN }} tokensecret=${{ secrets.TOKENSECRET }} key=${{ secrets.KEY }} keysecret=${{ secrets.KEYSECRET }}
+
+on:
+ push:
+  branches:
+    - '*'
+ pull_request:
+  branches:
+    - master
+
+jobs:
+  test:
+    runs-on: 'ubuntu-latest'
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v2
+      - name: Use Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+      - name: Install npm packages
+        run: npm ci
+      - name: Lint project
+        if: always()
+        run: npm run lint
+      - name: Run API tests
+        if: always()
+        run: ${{ env.PASSWORDS }} npm run api-test
+      - name: Run UI tests
+        if: always()
+        run: ${{ env.PASSWORDS }} npm run ui-test
+      - name: Publish Test Report
+        if: always()
+        uses: mikepenz/action-junit-report@v2
+        with:
+          report_paths: 'junit/*.xml'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
