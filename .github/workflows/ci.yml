@@ -4,12 +4,14 @@ env:
   PASSWORDS: testpassword=${{ secrets.TESTPASSWORD }} token=${{ secrets.TOKEN }} tokensecret=${{ secrets.TOKENSECRET }} key=${{ secrets.KEY }} keysecret=${{ secrets.KEYSECRET }}
 
 on:
- push:
-  branches:
-    - '*'
- pull_request:
-  branches:
-    - master
+  workflow_dispatch:
+  push:
+    branches:
+      - '*'
+  pull_request:
+    branches:
+      - master
+
 
 jobs:
   test:
