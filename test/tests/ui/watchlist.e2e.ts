@@ -16,7 +16,6 @@ describe('Watchlist', () => {
 
   beforeAll(() => {
     home.logIn(roles.testRole);
-    home.open();
   });
 
   afterAll(() => {
