@@ -10,8 +10,8 @@ describe('Search', () => {
 
   it('should return the expected number of listings', () => {
     home.open();
-    home.openMainCategory(Categories.antiques);
-    home.openSubcategory(Antiques.stamps);
+    home.openMainCategory(Categories.Antiques);
+    home.openSubcategory(Antiques.Stamps);
     home.search('product');
 
     expect(listings.getListings().length).toEqual(12);

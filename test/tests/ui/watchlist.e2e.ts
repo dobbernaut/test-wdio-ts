@@ -16,7 +16,6 @@ describe('Watchlist', () => {
 
   beforeAll(() => {
     home.logIn(roles.testRole);
-    home.open();
   });
 
   afterAll(() => {
@@ -25,8 +24,8 @@ describe('Watchlist', () => {
   });
 
   it('should add a listing to the user watchlist', () => {
-    home.openMainCategory(Categories.antiques);
-    home.openSubcategory(Antiques.stamps);
+    home.openMainCategory(Categories.Antiques);
+    home.openSubcategory(Antiques.Stamps);
     home.search('product');
     listing = listings.getListings()[0];
 

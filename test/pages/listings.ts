@@ -22,8 +22,11 @@ export class Listings extends Base {
     return listings;
   }
 
-  addListingToWatchlist(options: {title?: string, listingId?: number, index?: number}): void {
+  addListingToWatchlist(options: Listing): void {
     let listingFound = false;
+    if (!options.title && !options.listingId && !options.index) {
+      fail('No listing information provided. Provide either a listing title, id or index.');
+    }
 
     for (const listing of this.listings.allListings) {
       if (options.title && this.listingTitle(listing.index) === options.title) {
