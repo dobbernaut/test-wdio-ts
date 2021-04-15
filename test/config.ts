@@ -15,9 +15,17 @@ const getPassword = (): string => {
   }
 };
 
+const getUserName = (): string => {
+  if (process.env.username) {
+    return process.env.username;
+  } else {
+    throw new Error('No username was set for the test role. Add environment variable username');
+  }
+};
+
 export const roles: Roles = {
   testRole : {
-    username: 'flux_test_005@test.test',
+    username: getUserName(),
     password: getPassword()
   }
 };
