@@ -16,8 +16,8 @@ const getPassword = (): string => {
 };
 
 const getUserName = (): string => {
-  if (process.env.username) {
-    return process.env.username;
+  if (process.env.testuser) {
+    return process.env.testuser;
   } else {
     throw new Error('No username was set for the test role. Add environment variable username');
   }

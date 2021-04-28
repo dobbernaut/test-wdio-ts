@@ -1,7 +1,7 @@
 name: TradeMe Test
 
 env:
-  PASSWORDS: username=${{ secrets.USERNAME }} testpassword=${{ secrets.TESTPASSWORD }} token=${{ secrets.TOKEN }} tokensecret=${{ secrets.TOKENSECRET }} key=${{ secrets.KEY }} keysecret=${{ secrets.KEYSECRET }}
+  PASSWORDS: testuser=${{ secrets.USERNAME }} testpassword=${{ secrets.TESTPASSWORD }} token=${{ secrets.TOKEN }} tokensecret=${{ secrets.TOKENSECRET }} key=${{ secrets.KEY }} keysecret=${{ secrets.KEYSECRET }}
 
 on:
   workflow_dispatch:
