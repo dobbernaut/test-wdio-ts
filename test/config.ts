@@ -1,6 +1,6 @@
-import { Clients } from './types/clients';
-import { Roles } from './types/credentials';
-import { Sites } from './types/sites';
+import { Clients } from '@type/clients';
+import { Roles } from '@type/credentials';
+import { Sites } from '@type/sites';
 
 export const siteUrl: Sites = {
   ui: 'https://www.tmsandbox.co.nz',
@@ -16,8 +16,8 @@ const getPassword = (): string => {
 };
 
 const getUserName = (): string => {
-  if (process.env.username) {
-    return process.env.username;
+  if (process.env.testuser) {
+    return process.env.testuser;
   } else {
     throw new Error('No username was set for the test role. Add environment variable username');
   }

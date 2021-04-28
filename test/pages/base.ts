@@ -1,4 +1,4 @@
-import { Credentials } from '../types/credentials';
+import { Credentials } from '@type/credentials';
 import { BaseElemenents } from './base-elements';
 
 export class Base {

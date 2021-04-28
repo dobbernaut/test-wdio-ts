@@ -1,5 +1,5 @@
 import { inspect } from 'util';
-import { clients } from '../config';
+import { clients } from '@test/config';
 
 export class BaseService {
 

@@ -1,5 +1,5 @@
-import { Listing } from '../types/listing';
-import { Base } from './base';
+import { Listing } from '@type/listing';
+import { Base } from '@pages/base';
 import { ListingsElements } from './listings-elements';
 
 export class Listings extends Base {

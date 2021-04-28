@@ -1,4 +1,4 @@
-import { Search } from '../../services/search';
+import { Search } from '@services/search';
 
 describe('General Search', () => {
 

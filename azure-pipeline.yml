@@ -1,6 +1,6 @@
 variables:
 - name: passwords
-  value: username=$(USERNAME) testpassword=$(TESTPASSWORD) token=$(TOKEN) tokensecret=$(TOKENSECRET) key=$(KEY) keysecret=$(KEYSECRET)
+  value: testuser=$(USERNAME) testpassword=$(TESTPASSWORD) token=$(TOKEN) tokensecret=$(TOKENSECRET) key=$(KEY) keysecret=$(KEYSECRET)
 
 trigger:
 - master

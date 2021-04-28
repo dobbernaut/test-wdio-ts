@@ -70,7 +70,7 @@ The tests involves logging in and providing authorisation tokens retreived from 
 To set this on your machine, you will need to add these environment variables with the corresponding value **OR** you can **use the two test commands provided below under the Run test section**.
 
 ```text
-username=REPLACEWITHusername
+testuser=REPLACEWITHtestusername
 testpassword=REPLACEWITHuserpassword
 token=REPLACEWITHoauthtoken
 tokensecret=REPLACEWITHoauthtokensecret
@@ -87,7 +87,7 @@ npm run ui-test
 
 **to include the required environment variables from the command line:**
 ```bash
-username=**REPLACEWITHusername** testpassword=**REPLACEWITHuserpassword** token=**REPLACEWITHoauthtoken** tokensecret=**REPLACEWITHoauthtokensecret** key=**REPLACEWITHconsumerkey** keysecret=**REPLACEWITHconsumersecret** npm run ui-test
+testuser=**REPLACEWITHtestusername** testpassword=**REPLACEWITHuserpassword** token=**REPLACEWITHoauthtoken** tokensecret=**REPLACEWITHoauthtokensecret** key=**REPLACEWITHconsumerkey** keysecret=**REPLACEWITHconsumersecret** npm run ui-test
 ```
 
 ![uiTest](files/uiTest.png)
@@ -99,7 +99,7 @@ npm run api-test
 
 **to include the required environment variables from the command line:**
 ```bash
-username=**REPLACEWITHusername** testpassword=**REPLACEWITHuserpassword** token=**REPLACEWITHoauthtoken** tokensecret=**REPLACEWITHoauthtokensecret** key=**REPLACEWITHconsumerkey** keysecret=**REPLACEWITHconsumersecret** npm run api-test
+testuser=**REPLACEWITHtestusername** testpassword=**REPLACEWITHuserpassword** token=**REPLACEWITHoauthtoken** tokensecret=**REPLACEWITHoauthtokensecret** key=**REPLACEWITHconsumerkey** keysecret=**REPLACEWITHconsumersecret** npm run api-test
 ```
 
 ![apiTest](files/apiTest.png)

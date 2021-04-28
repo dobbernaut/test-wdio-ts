@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
     "outDir": "../out-tsc/e2e",
     "module": "commonjs",
     "target": "es2018",
@@ -7,6 +8,13 @@
       "node",
       "webdriverio/sync",
       "@wdio/jasmine-framework"
-    ]
+    ],
+    "paths": {
+      "@test/*": ["./test/*"],
+      "@enums/*": ["./test/enums/*"],
+      "@pages/*": ["./test/pages/*"],
+      "@services/*": ["./test/services/*"],
+      "@type/*": ["./test/types/*"],
+    }
   }
 }
