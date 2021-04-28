@@ -1,7 +1,7 @@
-import { Categories } from '../../enums/listing-categories';
-import { Antiques } from '../../enums/listing-sub-categories';
-import { Home } from '../../pages/home';
-import { Listings } from '../../pages/listings';
+import { Categories } from '@enums/listing-categories';
+import { Antiques } from '@enums/listing-sub-categories';
+import { Home } from '@pages/home';
+import { Listings } from '@pages/listings';
 
 describe('Search', () => {
 

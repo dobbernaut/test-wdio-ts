@@ -1,5 +1,5 @@
 const seleniumConfig = {
-  drivers: { chrome: { version: '88.0.4324.96' } },
+  drivers: { chrome: { version: '89.0.4389.23' } },
 };
 
 exports.config = {
@@ -44,6 +44,7 @@ exports.config = {
     }]
   ],
   jasmineOpts: {
-    defaultTimeoutInterval: 60000
+    defaultTimeoutInterval: 60000,
+    requires: ['tsconfig-paths/register']
   }
 }

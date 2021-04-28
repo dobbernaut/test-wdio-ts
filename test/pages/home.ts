@@ -1,4 +1,4 @@
-import { Base } from './base';
+import { Base } from '@pages/base';
 import { HomeElements } from './home-elements';
 
 export class Home extends Base {

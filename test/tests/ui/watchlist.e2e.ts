@@ -1,10 +1,10 @@
-import { roles } from '../../config';
-import { Categories } from '../../enums/listing-categories';
-import { Antiques } from '../../enums/listing-sub-categories';
-import { Home } from '../../pages/home';
-import { Listings } from '../../pages/listings';
-import { Watchlist } from '../../pages/watchlist';
-import { Listing } from '../../types/listing';
+import { roles } from '@test/config';
+import { Categories } from '@enums/listing-categories';
+import { Antiques } from '@enums/listing-sub-categories';
+import { Home } from '@pages/home';
+import { Listings } from '@pages/listings';
+import { Watchlist } from '@pages/watchlist';
+import { Listing } from '@type/listing';
 
 describe('Watchlist', () => {
 

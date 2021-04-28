@@ -1,6 +1,6 @@
-import { Clients } from './types/clients';
-import { Roles } from './types/credentials';
-import { Sites } from './types/sites';
+import { Clients } from '@type/clients';
+import { Roles } from '@type/credentials';
+import { Sites } from '@type/sites';
 
 export const siteUrl: Sites = {
   ui: 'https://www.tmsandbox.co.nz',
