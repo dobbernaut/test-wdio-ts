@@ -16,11 +16,11 @@ steps:
   displayName: 'Lint project'
   condition: succeededOrFailed()
 
-- script: ${{ variables.passwords }} npm run api-test
+- script: ${{ variables.passwords }} npm run test-api
   displayName: 'Run API tests'
   condition: succeededOrFailed()
 
-- script: ${{ variables.passwords }} npm run ui-test
+- script: ${{ variables.passwords }} npm run test-ui
   displayName: 'Run UI tests'
   condition: succeededOrFailed()
 
