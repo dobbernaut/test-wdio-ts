@@ -4,8 +4,8 @@
   "description": "trademe",
   "scripts": {
     "lint": "eslint ./test",
-    "ui-test": "wdio run ./wdio.conf.js",
-    "api-test": "jasmine-ts --config=./jasmine.json"
+    "test-ui": "wdio run ./wdio.conf.js",
+    "test-api": "jasmine-ts --config=./jasmine.json"
   },
   "author": "noel sevilla",
   "license": "ISC",

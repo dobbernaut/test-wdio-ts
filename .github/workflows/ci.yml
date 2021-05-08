@@ -28,10 +28,10 @@ jobs:
         run: npm run lint
       - name: Run API tests
         if: always()
-        run: ${{ env.PASSWORDS }} npm run api-test
+        run: ${{ env.PASSWORDS }} npm run test-api
       - name: Run UI tests
         if: always()
-        run: ${{ env.PASSWORDS }} npm run ui-test
+        run: ${{ env.PASSWORDS }} npm run test-ui
       - name: Publish Test Report
         if: always()
         uses: mikepenz/action-junit-report@v2

@@ -82,24 +82,24 @@ keysecret=REPLACEWITHconsumersecret
 
 For running the ui tests, use:
 ```bash
-npm run ui-test
+npm run test-ui
 ```
 
 **to include the required environment variables from the command line:**
 ```bash
-testuser=**REPLACEWITHtestusername** testpassword=**REPLACEWITHuserpassword** token=**REPLACEWITHoauthtoken** tokensecret=**REPLACEWITHoauthtokensecret** key=**REPLACEWITHconsumerkey** keysecret=**REPLACEWITHconsumersecret** npm run ui-test
+testuser=**REPLACEWITHtestusername** testpassword=**REPLACEWITHuserpassword** token=**REPLACEWITHoauthtoken** tokensecret=**REPLACEWITHoauthtokensecret** key=**REPLACEWITHconsumerkey** keysecret=**REPLACEWITHconsumersecret** npm run test-ui
 ```
 
 ![uiTest](files/uiTest.png)
 
 For running the api tests, use:
 ```bash
-npm run api-test
+npm run test-api
 ```
 
 **to include the required environment variables from the command line:**
 ```bash
-testuser=**REPLACEWITHtestusername** testpassword=**REPLACEWITHuserpassword** token=**REPLACEWITHoauthtoken** tokensecret=**REPLACEWITHoauthtokensecret** key=**REPLACEWITHconsumerkey** keysecret=**REPLACEWITHconsumersecret** npm run api-test
+testuser=**REPLACEWITHtestusername** testpassword=**REPLACEWITHuserpassword** token=**REPLACEWITHoauthtoken** tokensecret=**REPLACEWITHoauthtokensecret** key=**REPLACEWITHconsumerkey** keysecret=**REPLACEWITHconsumersecret** npm run test-api
 ```
 
 ![apiTest](files/apiTest.png)
