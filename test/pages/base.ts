@@ -5,26 +5,26 @@ export class Base {
 
   base = new BaseElemenents();
 
-  logIn(role: Credentials): void {
-    browser.url('/');
-    this.base.openLogin.click();
-    this.base.email.setValue(role.username);
-    this.base.password.setValue(role.password);
-    this.base.login.click();
-    this.waitForLogout();
+  async logIn(role: Credentials): Promise<void> {
+    await browser.url('');
+    await (await this.base.openLogin).click();
+    await (await this.base.email).setValue(role.username);
+    await (await this.base.password).setValue(role.password);
+    await (await this.base.login).click();
+    await this.waitForLogout();
   }
 
-  logOut(): void {
-    this.base.logout.click();
-    this.waitForLogin();
+  async logOut(): Promise<void> {
+    await (await this.base.logout).click();
+    await this.waitForLogin();
   }
 
-  private waitForLogout(): void {
-    this.base.logout.waitForExist();
+  private async waitForLogout(): Promise<void> {
+    await (await this.base.logout).waitForExist();
   }
 
-  private waitForLogin(): void {
-    this.base.openLogin.waitForExist();
+  private async waitForLogin(): Promise<void> {
+    await (await this.base.openLogin).waitForExist();
   }
 
 }

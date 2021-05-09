@@ -5,31 +5,31 @@ export class Home extends Base {
 
   home = new HomeElements();
 
-  open(): void {
-    browser.url('/');
+  async open(): Promise<void> {
+    await browser.url('/');
   }
 
-  search(search: string): void {
-    this.home.searchBox.setValue(search);
-    this.home.search.click();
-    this.home.searchResultsHeading.waitForExist();
+  async search(search: string): Promise<void> {
+    await (await this.home.searchBox).setValue(search);
+    await (await this.home.search).click();
+    await (await this.home.searchResultsHeading).waitForExist();
   }
 
-  toggleWatchlistDropdown(): void {
-    this.home.openWatchlistDropdown.click();
-    this.home.watchlistDropdown.waitForExist();
+  async toggleWatchlistDropdown(): Promise<void> {
+    await (await this.home.openWatchlistDropdown).click();
+    await (await this.home.watchlistDropdown).waitForExist();
   }
 
-  viewWatchlist(): void {
-    this.toggleWatchlistDropdown();
-    this.home.viewWatchlist.click();
+  async viewWatchlist(): Promise<void> {
+    await this.toggleWatchlistDropdown();
+    await (await this.home.viewWatchlist).click();
   }
 
-  openMainCategory(category: string): void {
-    this.home.mainCategory.waitForExist();
+  async openMainCategory(category: string): Promise<void> {
+    await (await this.home.mainCategory).waitForExist();
     let categoryFound = false;
-    for (const mainCategory of this.home.mainCategories) {
-      if (mainCategory.getText() === category) {
+    for (const mainCategory of await this.home.mainCategories) {
+      if (await mainCategory.getText() === category) {
         mainCategory.click();
         categoryFound = true;
         break;
@@ -40,11 +40,11 @@ export class Home extends Base {
     }
   }
 
-  openSubcategory(category: string): void {
-    this.home.subcategory.waitForExist();
+  async openSubcategory(category: string): Promise<void> {
+    await (await this.home.subcategory).waitForExist();
     let subcategoryFound = false;
-    for (const subcategory of this.home.subcategories) {
-      if (subcategory.getText() === category) {
+    for (const subcategory of await this.home.subcategories) {
+      if (await subcategory.getText() === category) {
         subcategory.click();
         subcategoryFound = true;
         break;

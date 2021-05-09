@@ -13,29 +13,31 @@ describe('Watchlist', () => {
   const watchlist = new Watchlist();
 
   let listing: Listing;
+  let listingsToRemove: Listing[] = [];
 
-  beforeAll(() => {
-    home.logIn(roles.testRole);
+  beforeAll(async () => {
+    await home.logIn(roles.testRole);
   });
 
-  afterAll(() => {
-    watchlist.removeListingsFromWatchlist([listing]);
-    home.logOut();
+  afterAll(async () => {
+    await watchlist.removeListingsFromWatchlist(listingsToRemove);
+    await home.logOut();
   });
 
-  it('should add a listing to the user watchlist', () => {
-    home.openMainCategory(Categories.Antiques);
-    home.openSubcategory(Antiques.Stamps);
-    home.search('product');
-    listing = listings.getListings()[0];
+  it('should add a listing to the user watchlist', async () => {
+    await home.openMainCategory(Categories.Antiques);
+    await home.openSubcategory(Antiques.Stamps);
+    await home.search('product');
+    listing = (await listings.getListings())[0];
+    await listings.addListingToWatchlist(listing);
+    listingsToRemove.push(listing);
 
-    listings.addListingToWatchlist({listingId: listing.listingId});
-    home.viewWatchlist();
-    const watchlistListingIds: number[] = watchlist.getListingsOnWatchlist().map(watchlistListing => {
+    await home.viewWatchlist();
+    const watchlistListings: Listing[] = await watchlist.getListingsOnWatchlist();
+    const watchlistListingsId: number[] = watchlistListings.map(watchlistListing => {
       return watchlistListing.listingId;
     });
-
-    expect(watchlistListingIds).toContain(listing.listingId);
+    expect(watchlistListingsId).toContain(listing.listingId);
   });
 
 });

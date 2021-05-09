@@ -6,7 +6,7 @@
     "target": "es2018",
     "types": [
       "node",
-      "webdriverio/sync",
+      "webdriverio/async",
       "@wdio/jasmine-framework"
     ],
     "paths": {

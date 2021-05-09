@@ -6,48 +6,48 @@ export class Watchlist extends Base {
 
   watchlist = new WatchlistElements();
 
-  getListingsOnWatchlist(): Listing[] {
+  async getListingsOnWatchlist(): Promise<Listing[]> {
     const listings: Listing[] = [];
-    this.waitForWatchlistForm();
-    for (const watchlistListing of this.watchlist.listingsCheckbox) {
+    await this.waitForWatchlistForm();
+    for (const watchlistListing of await this.watchlist.listingsCheckbox) {
       listings.push({
         index: watchlistListing.index,
-        listingId: this.getListingIdFromCheckbox(watchlistListing)
+        listingId: await this.getListingIdFromCheckbox(watchlistListing)
       });
     }
     return listings;
   }
 
-  removeListingsFromWatchlist(listings: Listing[]): void {
-    this.waitForWatchlistForm();
-    listings.forEach(listing => {
+  async removeListingsFromWatchlist(listings: Listing[]): Promise<void> {
+    await this.waitForWatchlistForm();
+    for (const listing of listings) {
       let listingMatch = false;
-      for (const watchlistListing of this.watchlist.listingsCheckbox) {
-        const watchlistListingId = this.getListingIdFromCheckbox(watchlistListing);
+      for (const watchlistListing of await this.watchlist.listingsCheckbox) {
+        const watchlistListingId = await this.getListingIdFromCheckbox(watchlistListing);
         if (listing.listingId === watchlistListingId) {
           listingMatch = true;
-          watchlistListing.click();
+          await watchlistListing.click();
           break;
         }
       }
       if (!listingMatch) {
         fail(`Listing "${listing}" is not on watchlist`);
       }
-    });
-    this.deleteSelectedListings();
+    };
+    await this.deleteSelectedListings();
   }
 
-  private deleteSelectedListings(): void {
-    this.watchlist.delete.click();
-    this.watchlist.confirmDeletion.click();
+  private async deleteSelectedListings(): Promise<void> {
+    await (await this.watchlist.delete).click();
+    await (await this.watchlist.confirmDeletion).click();
   }
 
-  private getListingIdFromCheckbox(listing: ElementSync): number {
-    return parseInt(listing.getAttribute('name').match(/[^(chk)]\d*/)[0]);
+  private async getListingIdFromCheckbox(listing: ElementSync): Promise<number> {
+    return parseInt(await (await listing.getAttribute('name')).match(/[^(chk)]\d*/)[0]);
   }
 
-  private waitForWatchlistForm(): void {
-    this.watchlist.watchlistForm.waitForExist();
+  private async waitForWatchlistForm(): Promise<void> {
+    await (await this.watchlist.watchlistForm).waitForExist();
   }
 
 }
