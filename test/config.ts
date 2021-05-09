@@ -3,8 +3,8 @@ import { Roles } from '@type/credentials';
 import { Sites } from '@type/sites';
 
 export const siteUrl: Sites = {
-  ui: 'PLACE.URL.HERE',
-  api: 'PLACE.URL.HERE',
+  ui: 'https://www.tmsandbox.co.nz',
+  api: 'https://api.tmsandbox.co.nz/v1',
 };
 
 const getPassword = (): string => {
