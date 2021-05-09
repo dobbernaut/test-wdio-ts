@@ -18,12 +18,6 @@ You can get the [JDK](https://jdk.java.net/archive/) from here, extract and add 
 
 ![JDK 11](files/jdk11.png)
 
-Webdriverio is also using [webdriverio/sync](https://webdriver.io/docs/sync-vs-async/) which allows the tests to be written without the need for async/await.
-
-![wdioSync](files/wdioSync.png)
-
-This requires a C++ compiler to be available from your machine. [Choose either options here to install if not already on your machine](https://www.npmjs.com/package/node-gyp#option-1).
-
 ## Application Accounts and Tokens
 ----
 You will need to have a user created on the Trade Me sandbox and have generated OAuth tokens for the user to run these. You will then use these information for the environment variables as instrctured on the Test section.
