@@ -5,7 +5,7 @@ describe('General Search', () => {
   const search = new Search();
 
   it('should return search results given a category and a search string', async() => {
-    await search.general({  category: '0187-4383-', search_string: 'product' })
+    await search.general({  category: '0002-0356-', search_string: 'product' })
       .then(response => {
         const searchResults = response.data;
         expect(searchResults.TotalCount).toBeGreaterThanOrEqual(0);

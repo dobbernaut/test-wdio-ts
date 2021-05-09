@@ -24,3 +24,10 @@ export enum Antiques {
   Tobacco = 'Tobacco related',
   Other = 'Other'
 }
+
+export enum Computers {
+  Components = 'Components',
+  Desktops = 'Desktops',
+  Laptops = 'Laptops',
+  Printers = 'Printers'
+}

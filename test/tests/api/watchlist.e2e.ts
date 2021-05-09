@@ -10,7 +10,7 @@ describe('Watchlist', () => {
   let listingId: number;
 
   beforeAll( async() => {
-    await search.general({ category: '0187-4383-', search_string: 'product' })
+    await search.general({ category: '0002-0356-', search_string: 'product' })
       .then(response => {
         const searchResults = response.data;
         if (searchResults.List && searchResults.List.length > 0) {
