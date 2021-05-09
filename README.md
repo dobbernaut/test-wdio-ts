@@ -1,16 +1,16 @@
-
 # Description
-These are tests for Trade Me's website and services.
 
-The tests are divided into two. A UI test suite that tests the [Trade Me website](https://www.tmsandbox.co.nz/), and an API test suite which test [Trade Me's services](https://developer.trademe.co.nz/api-overview/).
+This is a sample test suite for testing web UI and APIs.
 
 The tests runs on node and is written on Typescript. It uses [axios](https://axios-http.com/) as the http client for testing the services and [webdriverio](https://webdriver.io/) for the website. Both are using [Jasmine](https://jasmine.github.io/) for the test framework.
 
-An Azure pipeline is setup to run these tests. It can be accessed from [here](https://dev.azure.com/noelsev/bahaykubo/_build?definitionId=4).
+This is a template using WebdriverIO async mode which means you need to use async/await for page element actions. see further information about [sync and async mode with WebdriverIO](https://webdriver.io/docs/sync-vs-async).
+
+If you want to use sync mode, use the [sync branch](https://github.com/dobbernaut/test-webdriverio/tree/sync) as your template instead.
 
 # Prerequisites
 
-You will need to have [Node](https://nodejs.org/en/) installed (used v12.13.0) and able to run npm (used v6.12.0) commands. Run the commands shown here from bash or shell.
+You will need to have [Node](https://nodejs.org/en/) installed and able to run npm commands. Run the commands shown here from bash or shell.
 
 Webdriverio uses [selenium-standalone](https://www.npmjs.com/package/selenium-standalone) to run the browser tests, so [Java is required to be available](https://github.com/vvo/selenium-standalone/blob/HEAD/docs/java-versions.md) from your machine.
 
@@ -19,12 +19,11 @@ You can get the [JDK](https://jdk.java.net/archive/) from here, extract and add 
 ![JDK 11](files/jdk11.png)
 
 ## Application Accounts and Tokens
-----
-You will need to have a user created on the Trade Me sandbox and have generated OAuth tokens for the user to run these. You will then use these information for the environment variables as instrctured on the Test section.
 
+This test uses the [Trade Me sandbox](https://www.tmsandbox.co.nz/). You will need to have a user created on the Trade Me sandbox and have generated OAuth tokens for the user to run these. You will then use these information for the environment variables as instrctured on the Test section.
 
 ### Create New User
-----
+
 Please go **[here to register and create a new user](https://www.tmsandbox.co.nz/Members/Register.aspx)** **OR** register from the main page.
 
 ![register](files/register.png)
@@ -42,7 +41,7 @@ Go to Developer options and then register a new application. Once you have creat
 ![viewRegisterANewApplication](files/viewRegisterANewApplication.png)
 
 ### Generate Access Token
-----
+
 To make Trade Me API calls, you will need to to be a Trade Me member and obtain an Oauth token. To create one for yourself, use the access token generator from the **[Trade Me developer site](https://developer.trademe.co.nz/api-overview/authentication/)**.
 
 ![generateAccessToken](files/generateAccessToken.png)
@@ -52,6 +51,7 @@ Provide the consumer key and secret to generate the oauth token and secret.
 You will then use and add all these information to your environment variables.
 
 # Setup
+
 To set up the project, install the npm packages by running
 
 ```bash
@@ -71,8 +71,8 @@ tokensecret=REPLACEWITHoauthtokensecret
 key=REPLACEWITHconsumerkey
 keysecret=REPLACEWITHconsumersecret
 ```
+
 ## Run test
-----
 
 For running the ui tests, use:
 ```bash
