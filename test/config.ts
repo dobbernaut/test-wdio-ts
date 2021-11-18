@@ -24,7 +24,7 @@ const getUserName = (): string => {
 };
 
 export const roles: Roles = {
-  testRole : {
+  testRole: {
     username: getUserName(),
     password: getPassword()
   }

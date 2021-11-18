@@ -9,7 +9,7 @@ describe('Watchlist', () => {
 
   let listingId: number;
 
-  beforeAll( async() => {
+  beforeAll(async () => {
     await search.general({ category: '0002-0356-', search_string: 'product' })
       .then(response => {
         const searchResults = response.data;
@@ -24,7 +24,7 @@ describe('Watchlist', () => {
       });
   });
 
-  afterAll( async() => {
+  afterAll(async () => {
     await myTradeMe.removeListingFromWatchlist(listingId)
       .then(response => {
         expect(response.data.Success).toBeTrue();
@@ -34,7 +34,7 @@ describe('Watchlist', () => {
       });
   });
 
-  it('should add a listing to user watchlist', async() => {
+  it('should add a listing to user watchlist', async () => {
     await myTradeMe.addListingToWatchlist(listingId)
       .then(response => {
         expect(response.data.Success).toBeTrue();
@@ -44,10 +44,10 @@ describe('Watchlist', () => {
       });
   });
 
-  it('should have the added listing on user watchlist', async() => {
+  it('should have the added listing on user watchlist', async () => {
     await myTradeMe.retreiveWatchlist(WatchlistFilter.All)
       .then(response => {
-        const listingIds = response.data.List.map( listing => {
+        const listingIds = response.data.List.map(listing => {
           return listing.ListingId;
         });
         expect(listingIds).toContain(listingId);

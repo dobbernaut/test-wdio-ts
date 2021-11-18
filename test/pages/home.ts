@@ -55,5 +55,4 @@ export class Home extends Base {
     }
   }
 
-
 }

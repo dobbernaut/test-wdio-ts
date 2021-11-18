@@ -1,4 +1,4 @@
-export class BaseElemenents{
+export class BaseElemenents {
 
   // login
   get openLogin() { return $('#LoginLink'); }

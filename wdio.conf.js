@@ -29,7 +29,7 @@ exports.config = {
   connectionRetryCount: 3,
   services: [
     ['selenium-standalone', {
-      installArgs: seleniumConfig ,
+      installArgs: seleniumConfig,
       args: seleniumConfig
     }]
   ],
@@ -38,8 +38,8 @@ exports.config = {
     'spec',
     ['junit', {
       outputDir: './junit',
-      outputFileFormat: function(options) {
-        return 'ui-test-results.xml'
+      outputFileFormat: function () {
+        return 'ui-test-results.xml';
       }
     }]
   ],
@@ -47,4 +47,4 @@ exports.config = {
     defaultTimeoutInterval: 60000,
     requires: ['tsconfig-paths/register']
   }
-}
+};
