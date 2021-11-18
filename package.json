@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "trademe",
   "scripts": {
-    "lint": "eslint ./test",
+    "ci": "rm -rf node_modules && yarn install --frozen-lockfile",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix && npm run lint",
     "test-ui": "wdio run ./wdio.conf.js",
     "test-api": "jasmine-ts --config=./jasmine.json"
   },

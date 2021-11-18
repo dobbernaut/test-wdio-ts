@@ -4,19 +4,19 @@ This is a sample test suite for testing web UI and APIs.
 
 The tests runs on node and is written on Typescript. It uses [axios](https://axios-http.com/) as the http client for testing the services and [webdriverio](https://webdriver.io/) for the website. Both are using [Jasmine](https://jasmine.github.io/) for the test framework.
 
-This is a template using WebdriverIO async mode which means you need to use async/await for page element actions. see further information about [sync and async mode with WebdriverIO](https://webdriver.io/docs/sync-vs-async).
+# Sample
 
-If you want to use sync mode, use the [sync branch](https://github.com/dobbernaut/test-webdriverio/tree/sync) as your template instead.
+There is a sample test suite branch in this repo called `sample-test-suite`. Check out the branch to have a sample test to run.
 
 # Prerequisites
 
-You will need to have [Node](https://nodejs.org/en/) installed and able to run npm commands. Run the commands shown here from bash or shell.
+You will need to have [Node](https://nodejs.org/en/) and [yarn](https://classic.yarnpkg.com/en/docs/install) installed and able to run yarn commands. Run the commands shown here from bash or shell.
 
-Webdriverio uses [selenium-standalone](https://www.npmjs.com/package/selenium-standalone) to run the browser tests, so [Java is required to be available](https://github.com/vvo/selenium-standalone/blob/HEAD/docs/java-versions.md) from your machine.
+Install yarn globally.
 
-You can get the [JDK](https://jdk.java.net/archive/) from here, extract and add Java to your machine PATH. These tests were tested on JDK version 11.
-
-![JDK 11](files/jdk11.png)
+```bash
+npm install -g yarn
+```
 
 ## Application Accounts and Tokens
 
@@ -55,7 +55,7 @@ You will then use and add all these information to your environment variables.
 To set up the project, install the npm packages by running
 
 ```bash
-npm ci
+yarn ci
 ```
 
 # Test
@@ -76,24 +76,24 @@ keysecret=REPLACEWITHconsumersecret
 
 For running the ui tests, use:
 ```bash
-npm run test-ui
+yarn test-ui
 ```
 
 **to include the required environment variables from the command line:**
 ```bash
-testuser=**REPLACEWITHtestusername** testpassword=**REPLACEWITHuserpassword** token=**REPLACEWITHoauthtoken** tokensecret=**REPLACEWITHoauthtokensecret** key=**REPLACEWITHconsumerkey** keysecret=**REPLACEWITHconsumersecret** npm run test-ui
+testuser=**REPLACEWITHtestusername** testpassword=**REPLACEWITHuserpassword** token=**REPLACEWITHoauthtoken** tokensecret=**REPLACEWITHoauthtokensecret** key=**REPLACEWITHconsumerkey** keysecret=**REPLACEWITHconsumersecret** yarn test-ui
 ```
 
 ![uiTest](files/uiTest.png)
 
 For running the api tests, use:
 ```bash
-npm run test-api
+yarn test-api
 ```
 
 **to include the required environment variables from the command line:**
 ```bash
-testuser=**REPLACEWITHtestusername** testpassword=**REPLACEWITHuserpassword** token=**REPLACEWITHoauthtoken** tokensecret=**REPLACEWITHoauthtokensecret** key=**REPLACEWITHconsumerkey** keysecret=**REPLACEWITHconsumersecret** npm run test-api
+testuser=**REPLACEWITHtestusername** testpassword=**REPLACEWITHuserpassword** token=**REPLACEWITHoauthtoken** tokensecret=**REPLACEWITHoauthtokensecret** key=**REPLACEWITHconsumerkey** keysecret=**REPLACEWITHconsumersecret** yarn test-api
 ```
 
 ![apiTest](files/apiTest.png)
