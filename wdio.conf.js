@@ -1,7 +1,3 @@
-const seleniumConfig = {
-  drivers: { chrome: { version: '89.0.4389.23' } },
-};
-
 exports.config = {
   runner: 'local',
   specs: [
@@ -28,9 +24,10 @@ exports.config = {
   connectionRetryTimeout: 30000,
   connectionRetryCount: 3,
   services: [
-    ['selenium-standalone', {
-      installArgs: seleniumConfig,
-      args: seleniumConfig
+    ['chromedriver', {
+      logFileName: 'wdio-chromedriver.log',
+      outputDir: 'logs',
+      args: ['--silent']
     }]
   ],
   framework: 'jasmine',
