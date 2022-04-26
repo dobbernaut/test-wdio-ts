@@ -8,7 +8,7 @@ on:
   push:
   pull_request:
     branches:
-      - master
+      - main
 
 
 jobs:
@@ -20,7 +20,7 @@ jobs:
       - name: Use Node
         uses: actions/setup-node@v1
         with:
-          node-version: '14.x'
+          node-version: '16.x'
       - name: Install npm packages
         run: npm ci
       - name: Lint project
