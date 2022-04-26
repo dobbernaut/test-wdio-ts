@@ -1,3 +1,4 @@
+import { expect } from 'chai';
 import { roles } from '@test/config';
 import { Categories } from '@enums/listing-categories';
 import { Computers } from '@enums/listing-sub-categories';
@@ -6,7 +7,7 @@ import { Listings } from '@pages/listings';
 import { Watchlist } from '@pages/watchlist';
 import { Listing } from '@type/listing';
 
-describe('Watchlist', () => {
+describe('Watchlist', function () {
 
   const home = new Home();
   const listings = new Listings();
@@ -15,16 +16,16 @@ describe('Watchlist', () => {
   let listing: Listing;
   const listingsToRemove: Listing[] = [];
 
-  beforeAll(async () => {
+  before(async function () {
     await home.logIn(roles.testRole);
   });
 
-  afterAll(async () => {
+  after(async function () {
     await watchlist.removeListingsFromWatchlist(listingsToRemove);
     await home.logOut();
   });
 
-  it('should add a listing to the user watchlist', async () => {
+  it('should add a listing to the user watchlist', async function () {
     await home.openMainCategory(Categories.Computers);
     await home.openSubcategory(Computers.Laptops);
     await home.search('product');
@@ -37,7 +38,7 @@ describe('Watchlist', () => {
     const watchlistListingsId: number[] = watchlistListings.map(watchlistListing => {
       return watchlistListing.listingId;
     });
-    expect(watchlistListingsId).toContain(listing.listingId);
+    expect(watchlistListingsId).to.contain(listing.listingId);
   });
 
 });
