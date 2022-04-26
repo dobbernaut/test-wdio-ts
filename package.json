@@ -1,5 +1,5 @@
 {
-  "name": "test-wdio.mocha-ts",
+  "name": "test-wdio-mocha-ts",
   "version": "1.0.0",
   "description": "testing with webdriverio and mocha in typescript",
   "scripts": {
