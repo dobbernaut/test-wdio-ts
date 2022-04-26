@@ -7,14 +7,14 @@
     "types": [
       "node",
       "webdriverio/async",
-      "@wdio/jasmine-framework"
+      "@wdio/mocha-framework"
     ],
     "paths": {
-      "@test/*": ["./test/*"],
-      "@enums/*": ["./test/enums/*"],
-      "@pages/*": ["./test/pages/*"],
-      "@services/*": ["./test/services/*"],
-      "@type/*": ["./test/types/*"],
+      "@config/*": ["./config/*"],
+      "@constants/*": ["./constants/*"],
+      "@pages/*": ["./pages/*"],
+      "@services/*": ["./services/*"],
+      "@type/*": ["./types/*"],
     }
   }
 }

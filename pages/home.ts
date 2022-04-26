@@ -1,3 +1,4 @@
+import { expect } from 'chai';
 import { Base } from '@pages/base';
 import { HomeElements } from './home-elements';
 
@@ -36,7 +37,7 @@ export class Home extends Base {
       }
     }
     if (!categoryFound) {
-      fail(`Category "${category}" was not found from main categories`);
+      expect.fail(`Category "${category}" was not found from main categories`);
     }
   }
 
@@ -51,7 +52,7 @@ export class Home extends Base {
       }
     }
     if (!subcategoryFound) {
-      fail(`Subcategory "${category}" was not found from subcategories`);
+      expect.fail(`Subcategory "${category}" was not found from subcategories`);
     }
   }
 

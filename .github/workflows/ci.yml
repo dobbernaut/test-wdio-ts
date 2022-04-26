@@ -1,4 +1,4 @@
-name: TradeMe Test
+name: Test
 
 env:
   PASSWORDS: testuser=${{ secrets.USERNAME }} testpassword=${{ secrets.TESTPASSWORD }} token=${{ secrets.TOKEN }} tokensecret=${{ secrets.TOKENSECRET }} key=${{ secrets.KEY }} keysecret=${{ secrets.KEYSECRET }}
@@ -8,7 +8,7 @@ on:
   push:
   pull_request:
     branches:
-      - master
+      - main
 
 
 jobs:
@@ -20,18 +20,18 @@ jobs:
       - name: Use Node
         uses: actions/setup-node@v1
         with:
-          node-version: '14.x'
+          node-version: '16.x'
       - name: Install npm packages
-        run: npm ci
+        run: yarn ci
       - name: Lint project
         if: always()
-        run: npm run lint
+        run: yarn lint
       - name: Run API tests
         if: always()
-        run: ${{ env.PASSWORDS }} npm run test-api
+        run: ${{ env.PASSWORDS }} yarn test-api
       - name: Run UI tests
         if: always()
-        run: ${{ env.PASSWORDS }} npm run test-ui
+        run: ${{ env.PASSWORDS }} yarn test-ui
       - name: Publish Test Report
         if: always()
         uses: mikepenz/action-junit-report@v2

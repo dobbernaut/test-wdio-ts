@@ -1,3 +1,4 @@
+import { expect } from 'chai';
 import { Listing } from '@type/listing';
 import { Base } from '@pages/base';
 import { ListingsElements } from './listings-elements';
@@ -25,7 +26,7 @@ export class Listings extends Base {
   async addListingToWatchlist(options: Listing): Promise<void> {
     let listingFound = false;
     if (!options.title && !options.listingId && !options.index) {
-      fail('No listing information provided. Provide either a listing title, id or index.');
+      expect.fail('No listing information provided. Provide either a listing title, id or index.');
     }
 
     for (const listing of await this.listings.allListings) {
@@ -43,7 +44,7 @@ export class Listings extends Base {
     }
 
     if (!listingFound) {
-      fail(`Failed to add listing ${options} to user watchlist`);
+      expect.fail(`Failed to add listing ${options} to user watchlist`);
     }
   }
 

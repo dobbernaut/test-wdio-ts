@@ -1,5 +1,6 @@
+import { expect } from 'chai';
 import { inspect } from 'util';
-import { clients } from '@test/config';
+import { clients } from '@config/config';
 
 export class BaseService {
 
@@ -16,10 +17,10 @@ export class BaseService {
 
   errorHandler(error: any): void {
     if (error.response) {
-      fail(`Request failed. Status: ${error.response.status} - ${error.response.statusText}\n` +
+      expect.fail(`Request failed. Status: ${error.response.status} - ${error.response.statusText}\n` +
         `Error: ${inspect(error.response.data)}`);
     } else {
-      fail(`Request timeout. Error: ${error}`);
+      expect.fail(`Request timeout. Error: ${error}`);
     }
   }
 
