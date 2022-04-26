@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
-import { siteUrl } from '@test/config';
+import { siteUrl } from '@config/config';
 import { GeneralSearch } from '@type/search';
 import { BaseService } from '@services/base';
 

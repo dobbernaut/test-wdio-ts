@@ -8,7 +8,7 @@
     "lint-fix": "eslint . --fix && npm run lint",
     "test-ui": "wdio run ./wdio.config.ts",
     "test-ui-headless": "HEADLESS=true wdio run ./wdio.config.ts",
-    "test-api": "mocha test/tests/api"
+    "test-api": "mocha tests/api"
   },
   "author": "noel sevilla",
   "license": "ISC",

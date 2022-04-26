@@ -11,7 +11,7 @@
   ],
   "recursive": true,
   "require": ["ts-node/register", "tsconfig-paths/register", "mochawesome/register"],
-  "extension": [".e2e.ts"],
+  "extension": [".test.ts"],
   "timeout": 120000,
   "retries": 0,
   "inline-diffs": true,

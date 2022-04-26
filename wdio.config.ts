@@ -12,7 +12,7 @@ if (process.env.HEADLESS === 'true') {
 export const config = {
   runner: 'local',
   specs: [
-    './test/tests/ui/**/*.e2e.ts'
+    './tests/ui/**/*.test.ts'
   ],
   maxInstances: 10,
   capabilities: [{

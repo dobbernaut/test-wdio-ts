@@ -1,7 +1,7 @@
 import { expect } from 'chai';
-import { roles } from '@test/config';
-import { Categories } from '@enums/listing-categories';
-import { Computers } from '@enums/listing-sub-categories';
+import { roles } from '@config/config';
+import { Categories } from '@constants/listing-categories';
+import { Computers } from '@constants/listing-sub-categories';
 import { Home } from '@pages/home';
 import { Listings } from '@pages/listings';
 import { Watchlist } from '@pages/watchlist';

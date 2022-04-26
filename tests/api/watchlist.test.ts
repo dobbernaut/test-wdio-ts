@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { WatchlistFilter } from '@enums/watchlist-filter';
+import { WatchlistFilter } from '@constants/watchlist-filter';
 import { MyTradeMe } from '@services/my-trade-me';
 import { Search } from '@services/search';
 

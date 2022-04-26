@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import { inspect } from 'util';
-import { clients } from '@test/config';
+import { clients } from '@config/config';
 
 export class BaseService {
 
