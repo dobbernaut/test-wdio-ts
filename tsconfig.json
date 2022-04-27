@@ -11,9 +11,9 @@
     ],
     "paths": {
       "@config/*": ["./config/*"],
-      "@constants/*": ["./constants/*"],
-      "@pages/*": ["./pages/*"],
-      "@services/*": ["./services/*"],
+      "@constant/*": ["./constants/*"],
+      "@page/*": ["./pages/*"],
+      "@service/*": ["./services/*"],
       "@type/*": ["./types/*"],
     }
   }

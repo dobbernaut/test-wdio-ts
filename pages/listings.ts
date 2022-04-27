@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import { Listing } from '@type/listing';
-import { Base } from '@pages/base';
+import { Base } from '@page/base';
 import { ListingsElements } from './listings-elements';
 
 export class Listings extends Base {

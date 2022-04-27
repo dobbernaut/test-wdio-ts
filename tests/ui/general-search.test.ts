@@ -1,8 +1,8 @@
 import { expect } from 'chai';
-import { Categories } from '@constants/listing-categories';
-import { Computers } from '@constants/listing-sub-categories';
-import { Home } from '@pages/home';
-import { Listings } from '@pages/listings';
+import { Categories } from '@constant/listing-categories';
+import { Computers } from '@constant/listing-sub-categories';
+import { Home } from '@page/home';
+import { Listings } from '@page/listings';
 
 describe('Search', function () {
 

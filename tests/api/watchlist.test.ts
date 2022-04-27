@@ -1,7 +1,7 @@
 import { expect } from 'chai';
-import { WatchlistFilter } from '@constants/watchlist-filter';
-import { MyTradeMe } from '@services/my-trade-me';
-import { Search } from '@services/search';
+import { WatchlistFilter } from '@constant/watchlist-filter';
+import { MyTradeMe } from '@service/my-trade-me';
+import { Search } from '@service/search';
 
 describe('Watchlist', function () {
 
