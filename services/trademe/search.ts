@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 import { siteUrl } from '@config/config';
 import { GeneralSearch } from '@type/search';
-import { BaseService } from '@service/base';
+import { BaseService } from '@service/trademe/base';
 
 export class Search extends BaseService {
 

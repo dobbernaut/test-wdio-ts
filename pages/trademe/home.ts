@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { Base } from '@page/base';
+import { Base } from '@page/trademe/base';
 import { HomeElements } from './home-elements';
 
 export class Home extends Base {

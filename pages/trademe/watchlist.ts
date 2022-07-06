@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import { Listing } from '@type/listing';
-import { Base } from '@page/base';
+import { Base } from '@page/trademe/base';
 import { WatchlistElements } from './watchlist-elements';
 
 export class Watchlist extends Base {

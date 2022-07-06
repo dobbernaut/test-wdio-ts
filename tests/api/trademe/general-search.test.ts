@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { Search } from '@service/search';
+import { Search } from '@service/trademe/search';
 
 describe('General Search', function () {
 
