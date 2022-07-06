@@ -9,11 +9,19 @@ if (process.env.HEADLESS === 'true') {
   browserOptions.push('--headless');
 }
 
-export const config = {
+export const config: WebdriverIO.Config = {
   runner: 'local',
   specs: [
     './tests/ui/**/*.test.ts'
   ],
+  suites: {
+    trademe: [
+      './tests/ui/trademe/**/*.test.ts',
+    ],
+    sauceDemo: [
+      './tests/ui/sauce-demo/**/*.test.ts',
+    ]
+  },
   maxInstances: 10,
   capabilities: [{
     maxInstances: 5,
@@ -26,7 +34,6 @@ export const config = {
   }],
   logLevel: 'error',
   bail: 0,
-  baseUrl: 'https://www.tmsandbox.co.nz',
   waitforTimeout: 10000,
   connectionRetryTimeout: 30000,
   connectionRetryCount: 3,
@@ -36,7 +43,7 @@ export const config = {
       outputDir: './artifacts/logs',
       args: ['--silent']
     }],
-    [TimelineService]
+    [TimelineService, {}]
   ],
   framework: 'mocha',
   reporters: [

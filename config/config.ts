@@ -3,8 +3,11 @@ import { Roles } from '@type/credentials';
 import { Sites } from '@type/sites';
 
 export const siteUrl: Sites = {
-  ui: 'https://www.tmsandbox.co.nz',
-  api: 'https://api.tmsandbox.co.nz/v1',
+  trademe: {
+    ui: 'https://www.tmsandbox.co.nz',
+    api: 'https://api.tmsandbox.co.nz/v1',
+  },
+  sauceDemo: 'https://www.saucedemo.com/',
 };
 
 const getPassword = (): string => {
@@ -24,9 +27,13 @@ const getUserName = (): string => {
 };
 
 export const roles: Roles = {
-  testRole: {
+  trademeTestRole: {
     username: getUserName(),
     password: getPassword()
+  },
+  sauceDemoRole: {
+    username: 'standard_user',
+    password: 'secret_sauce',
   }
 };
 

@@ -17,7 +17,7 @@ describe('Watchlist', function () {
   const listingsToRemove: Listing[] = [];
 
   before(async function () {
-    await home.logIn(roles.testRole);
+    await home.logIn(roles.trademeTestRole);
   });
 
   after(async function () {
