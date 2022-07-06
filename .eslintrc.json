@@ -108,6 +108,12 @@
               "delimiter": "semi",
               "requireLast": true
             }
+          },
+          "typeLiteral": {
+            "multiline": {
+              "delimiter": "semi",
+              "requireLast": true
+            }
           }
         }
       }
