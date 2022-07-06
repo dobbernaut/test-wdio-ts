@@ -26,7 +26,7 @@
     "axe-html-reporter": "^2.2.3",
     "axios": "^0.21.1",
     "chai": "^4.3.4",
-    "chromedriver": "^99.0",
+    "chromedriver": "^103.0.0",
     "eslint": "^8.3.0",
     "eslint-plugin-mocha": "^9.0.0",
     "eslint-plugin-wdio": "^7.4.2",
