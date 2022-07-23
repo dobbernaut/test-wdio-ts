@@ -15,9 +15,6 @@ export const config: WebdriverIO.Config = {
     './tests/ui/**/*.test.ts'
   ],
   suites: {
-    trademe: [
-      './tests/ui/trademe/**/*.test.ts',
-    ],
     sauceDemo: [
       './tests/ui/sauce-demo/**/*.test.ts',
     ]
