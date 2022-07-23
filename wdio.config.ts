@@ -5,6 +5,8 @@ dotenv.config();
 const browserOptions = [
   '--disable-gpu',
   '--disable-logging',
+  '--disable-dev-shm-usage',
+  '--no-sandbox',
   '--window-size=1440,900',
 ];
 if (process.env.HEADLESS === 'true') {

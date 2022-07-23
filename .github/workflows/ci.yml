@@ -34,7 +34,7 @@ jobs:
 
       - name: Run UI tests
         if: always()
-        run: ${{ env.TESTPASSWORD }} yarn test-ui
+        run: ${{ env.PASSWORDS }} yarn test-ui-headless
 
       - name: Publish Test Report
         if: always()
