@@ -1,19 +1,28 @@
+import * as dotenv from 'dotenv';
 import { TimelineService } from 'wdio-timeline-reporter/timeline-service';
 
+dotenv.config();
 const browserOptions = [
   '--disable-gpu',
   '--disable-logging',
+  '--disable-dev-shm-usage',
+  '--no-sandbox',
   '--window-size=1440,900',
 ];
 if (process.env.HEADLESS === 'true') {
   browserOptions.push('--headless');
 }
 
-export const config = {
+export const config: WebdriverIO.Config = {
   runner: 'local',
   specs: [
     './tests/ui/**/*.test.ts'
   ],
+  suites: {
+    sauceDemo: [
+      './tests/ui/sauce-demo/**/*.test.ts',
+    ]
+  },
   maxInstances: 10,
   capabilities: [{
     maxInstances: 5,
@@ -26,7 +35,6 @@ export const config = {
   }],
   logLevel: 'error',
   bail: 0,
-  baseUrl: 'https://www.tmsandbox.co.nz',
   waitforTimeout: 10000,
   connectionRetryTimeout: 30000,
   connectionRetryCount: 3,
@@ -36,7 +44,7 @@ export const config = {
       outputDir: './artifacts/logs',
       args: ['--silent']
     }],
-    [TimelineService]
+    [TimelineService, {}]
   ],
   framework: 'mocha',
   reporters: [

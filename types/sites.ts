@@ -1,4 +1,4 @@
-export interface Sites {
-  ui: string;
-  api: string;
+export type Sites = {
+  jsonplaceholder: string;
+  sauceDemo: string;
 }

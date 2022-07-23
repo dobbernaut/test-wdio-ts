@@ -9,8 +9,6 @@
       - [For Mac](#for-mac)
       - [For Windows](#for-windows)
   - [Application Accounts and Tokens](#application-accounts-and-tokens)
-    - [Create New User](#create-new-user)
-    - [Generate Access Token](#generate-access-token)
   - [Setup](#setup)
   - [Test](#test)
   - [Run test](#run-test)
@@ -101,35 +99,20 @@ yarn --version
 
 ## Application Accounts and Tokens
 
-This test uses the [Trade Me sandbox](https://www.tmsandbox.co.nz/). You will need to have a user created on the Trade Me sandbox and have generated OAuth tokens for the user to run these. You will then use these information for the environment variables as instrctured on the Test section.
+This test uses the [Swag Labs sauce demo app](https://www.saucedemo.com/). You will need to set a `testpassword` environment variable for the user password set on the sauce demo page. You can either create a `.env` file on the main directory of this project with the `testpassword` environment variable
 
-### Create New User
+```
+# .env
+testpassword='SETPASSWORDHERE'
+```
 
-Please go **[here to register and create a new user](https://www.tmsandbox.co.nz/Members/Register.aspx)** **OR** register from the main page.
+OR
 
-![register](files/register.png)
+ set this on the terminal when you run the test commands
 
-And once you have created a new user and logged in, go to the users' **[My Trade Me API Application](https://www.tmsandbox.co.nz/MyTradeMe/Api/MyApplications.aspx)** **OR** open it from My Trade Me
-
-![viewMyTradeMe](files/viewMyTradeMe.png)
-
-![myTradeMeAPIApplications](files/myTradeMeAPIApplications.png)
-
-Go to Developer options and then register a new application. Once you have created a new application, you should see your application from 'Developer options' with a **Consumer key** and a **Consumer secret**. You will then use this to generate an access token for the API.
-
-![viewDeveloperOptions](files/viewDeveloperOptions.png)
-
-![viewRegisterANewApplication](files/viewRegisterANewApplication.png)
-
-### Generate Access Token
-
-To make Trade Me API calls, you will need to to be a Trade Me member and obtain an Oauth token. To create one for yourself, use the access token generator from the **[Trade Me developer site](https://developer.trademe.co.nz/api-overview/authentication/)**.
-
-![generateAccessToken](files/generateAccessToken.png)
-
-Provide the consumer key and secret to generate the oauth token and secret.
-
-You will then use and add all these information to your environment variables.
+```
+testpassword=SETPASSWORDHERE yarn test-ui
+```
 
 ## Setup
 
@@ -141,19 +124,6 @@ yarn ci
 
 ## Test
 
-The tests involves logging in and providing authorisation tokens retreived from the environment variables. When running these tests from a build pipeline, add these to the pipeline environment variables.
-
-To set this on your machine, you will need to add these environment variables with the corresponding value **OR** you can **use the two test commands provided below under the Run test section**.
-
-```text
-testuser=REPLACEWITHtestusername
-testpassword=REPLACEWITHuserpassword
-token=REPLACEWITHoauthtoken
-tokensecret=REPLACEWITHoauthtokensecret
-key=REPLACEWITHconsumerkey
-keysecret=REPLACEWITHconsumersecret
-```
-
 ## Run test
 
 For running the ui tests, use:
@@ -163,7 +133,7 @@ yarn test-ui
 
 **to include the required environment variables from the command line:**
 ```bash
-testuser=**REPLACEWITHtestusername** testpassword=**REPLACEWITHuserpassword** token=**REPLACEWITHoauthtoken** tokensecret=**REPLACEWITHoauthtokensecret** key=**REPLACEWITHconsumerkey** keysecret=**REPLACEWITHconsumersecret** yarn test-ui
+testpassword=**REPLACEWITHuserpassword** yarn test-ui
 ```
 
 ![uiTest](files/uiTest.png)
@@ -175,7 +145,7 @@ yarn test-api
 
 **to include the required environment variables from the command line:**
 ```bash
-testuser=**REPLACEWITHtestusername** testpassword=**REPLACEWITHuserpassword** token=**REPLACEWITHoauthtoken** tokensecret=**REPLACEWITHoauthtokensecret** key=**REPLACEWITHconsumerkey** keysecret=**REPLACEWITHconsumersecret** yarn test-api
+testpassword=**REPLACEWITHuserpassword** yarn test-api
 ```
 
 ![apiTest](files/apiTest.png)
