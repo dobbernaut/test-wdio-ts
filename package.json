@@ -27,6 +27,7 @@
     "axios": "^0.21.1",
     "chai": "^4.3.4",
     "chromedriver": "^103.0.0",
+    "dotenv": "^16.0.1",
     "eslint": "^8.3.0",
     "eslint-plugin-mocha": "^9.0.0",
     "eslint-plugin-wdio": "^7.4.2",

@@ -1,5 +1,7 @@
+import * as dotenv from 'dotenv';
 import { TimelineService } from 'wdio-timeline-reporter/timeline-service';
 
+dotenv.config();
 const browserOptions = [
   '--disable-gpu',
   '--disable-logging',
